@@ -51,7 +51,7 @@ app.delete('/hotel/:id', async (req, res) => {
   await k.destroy();
   res.json({ success: true });
 });
-
+//sequelize sync & start server
 const PORT = process.env.PORT || 3001;
 (async () => {
   try {
