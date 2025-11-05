@@ -1,6 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('./index');
-
+//deskripsi model Hotel dan tipe data nya
 const Hotel = sequelize.define('Hotel', {
   id: {
     type: DataTypes.INTEGER,
