@@ -13,7 +13,7 @@ console.log('DB_USER:', process.env.DB_USER);
 // Routes
 app.get('/', (req, res) => res.send('API Hotel running'));
 
-// CREATE
+// CREATE (post)
 app.post('/hotel', async (req, res) => {
   try {
     const k = await Hotel.create(req.body);
