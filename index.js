@@ -6,7 +6,7 @@ const Hotel = require('./models/hotel');
 const app = express();
 app.use(express.json());
 
-
+//main index.js 
 console.log('DB_DATABASE:', process.env.DB_DATABASE);
 console.log('DB_USER:', process.env.DB_USER);
 
@@ -52,7 +52,6 @@ app.delete('/hotel/:id', async (req, res) => {
   res.json({ success: true });
 });
 
-// Sync db & start server
 const PORT = process.env.PORT || 3001;
 (async () => {
   try {
