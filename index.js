@@ -44,7 +44,7 @@ app.put('/hotel/:id', async (req, res) => {
   res.json(k);
 });
 
-// DELETE
+// DELETE (delete)
 app.delete('/hotel/:id', async (req, res) => {
   const k = await Hotel.findByPk(req.params.id);
   if (!k) return res.status(404).json({ error: 'Not found' });
