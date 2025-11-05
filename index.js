@@ -36,7 +36,7 @@ app.get('/hotel/:id', async (req, res) => {
   res.json(k);
 });
 
-// UPDATE
+// UPDATE (put)
 app.put('/hotel/:id', async (req, res) => {
   const k = await Hotel.findByPk(req.params.id);
   if (!k) return res.status(404).json({ error: 'Not found' });
