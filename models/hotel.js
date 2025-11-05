@@ -1,14 +1,14 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('./index');
 
-const Hotel = sequelize.define('Tentrem', {
+const Hotel = sequelize.define('Hotel', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
     primaryKey: true
   },
   Tipe_Kamar: {
-    type: DataTypes.VARCHAR(50),
+    type: DataTypes.STRING(50),
     allowNull: false
   },
   Kapasitas_Tamu: {

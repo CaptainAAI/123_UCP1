@@ -16,7 +16,7 @@ app.get('/', (req, res) => res.send('API Hotel running'));
 // CREATE
 app.post('/hotel', async (req, res) => {
   try {
-    const k = await Karyawan.create(req.body);
+    const k = await hotel.create(req.body);
     res.status(201).json(k);
   } catch (err) {
     res.status(400).json({ error: err.message });
@@ -25,20 +25,20 @@ app.post('/hotel', async (req, res) => {
 
 // READ all
 app.get('/hotel', async (req, res) => {
-  const list = await Karyawan.findAll();
+  const list = await hotel.findAll();
   res.json(list);
 });
 
 // READ by id
 app.get('/hotel/:id', async (req, res) => {
-  const k = await Karyawan.findByPk(req.params.id);
+  const k = await hotel.findByPk(req.params.id);
   if (!k) return res.status(404).json({ error: 'Not found' });
   res.json(k);
 });
 
 // UPDATE
 app.put('/hotel/:id', async (req, res) => {
-  const k = await Karyawan.findByPk(req.params.id);
+  const k = await hotel.findByPk(req.params.id);
   if (!k) return res.status(404).json({ error: 'Not found' });
   await k.update(req.body);
   res.json(k);
@@ -46,7 +46,7 @@ app.put('/hotel/:id', async (req, res) => {
 
 // DELETE
 app.delete('/hotel/:id', async (req, res) => {
-  const k = await Karyawan.findByPk(req.params.id);
+  const k = await hotel.findByPk(req.params.id);
   if (!k) return res.status(404).json({ error: 'Not found' });
   await k.destroy();
   res.json({ success: true });
