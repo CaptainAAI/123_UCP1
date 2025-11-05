@@ -1,28 +1,36 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('./index');
 
-const Karyawan = sequelize.define('Karyawan', {
+const Hotel = sequelize.define('Tentrem', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
     primaryKey: true
   },
-  nama: {
-    type: DataTypes.STRING,
+  Tipe_Kamar: {
+    type: DataTypes.VARCHAR(50),
     allowNull: false
   },
-  jabatan: {
+  Kapasitas_Tamu: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    defaultValue: 2
+  },
+  Lantai: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    defaultValue: 1
+  },
+  Fasilitas: {
     type: DataTypes.STRING,
     allowNull: true
-  },
-  gaji: {
-    type: DataTypes.INTEGER,
-    allowNull: true,
-    defaultValue: 0
   }
 }, {
-  tableName: 'karyawan',
-  timestamps: true
+  tableName: 'hotel',
+  timestamps: true,
+  createdAt: 'Tanggalpesan',
+  updatedAt: 'Tanggalupdate'
 });
 
-module.exports = Karyawan;
+
+module.exports = Hotel;
