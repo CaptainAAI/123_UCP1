@@ -12,5 +12,5 @@ const sequelize = new Sequelize(
     logging: false, 
   }
 );
-
+//koneksi ke db mysql
 module.exports = sequelize;
