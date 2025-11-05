@@ -29,7 +29,7 @@ app.get('/hotel', async (req, res) => {
   res.json(list);
 });
 
-// READ by id
+// READ by id (get/x)
 app.get('/hotel/:id', async (req, res) => {
   const k = await Hotel.findByPk(req.params.id);
   if (!k) return res.status(404).json({ error: 'Not found' });
