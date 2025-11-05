@@ -23,7 +23,7 @@ app.post('/hotel', async (req, res) => {
   }
 });
 
-// READ all
+// READ all (get)
 app.get('/hotel', async (req, res) => {
   const list = await Hotel.findAll();
   res.json(list);
